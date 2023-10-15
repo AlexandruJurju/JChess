@@ -14,7 +14,7 @@ namespace ChessLogic {
 			Direction.N, Direction.S,Direction.E, Direction.W, Direction.NE, Direction.SE, Direction.NW,Direction.SW
 		};
 
-		public override List<Position> GetAllPossibleDestinations(Position origin, BoardModel board) {
+		public override List<Position> GetAllPossibleDestinations(Position origin, Board board) {
 			List<Position> result = new List<Position>();
 
 			foreach (Direction dir in moveDirections) {

@@ -2,7 +2,7 @@
 
 namespace ChessLogic {
 
-	public class BoardModel {
+	public class Board {
 		private Piece[,] board = new Piece[8, 8];
 
 		// indexer, acess elements as if it was an array
@@ -55,7 +55,7 @@ namespace ChessLogic {
 			return false;
 		}
 
-		public BoardModel() {
+		public Board() {
 			InitBoard();
 		}
 

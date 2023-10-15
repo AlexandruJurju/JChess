@@ -26,7 +26,7 @@ namespace ChessLogic {
 			FirstMove = false;
 		}
 
-		public override List<Position> GetAllPossibleDestinations(Position origin, BoardModel board) {
+		public override List<Position> GetAllPossibleDestinations(Position origin, Board board) {
 			List<Position> result = new List<Position>();
 
 			Position OneAway = origin + MainDirection;
@@ -55,11 +55,11 @@ namespace ChessLogic {
 			return result;
 		}
 
-		private bool CanMoveTo(Position pos, BoardModel board) {
+		private bool CanMoveTo(Position pos, Board board) {
 			return board.IsInsideBoard(pos) && board.IsEmptyPosition(pos);
 		}
 
-		private bool CanCapture(Position pos, BoardModel board) {
+		private bool CanCapture(Position pos, Board board) {
 			return board.IsInsideBoard(pos) && board[pos].Color != Color;
 		}
 	}

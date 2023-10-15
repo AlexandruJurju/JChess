@@ -8,7 +8,7 @@
 			Destination = destination;
 		}
 
-		public void Execute(BoardModel board) {
+		public void Execute(Board board) {
 			board[Destination] = board[Origin];
 			board[Origin] = null;
 		}

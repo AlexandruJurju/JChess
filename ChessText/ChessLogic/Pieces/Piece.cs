@@ -5,7 +5,7 @@ namespace ChessLogic {
 		public abstract PieceType Type { get; }
 		public abstract Player Color { get; }
 
-		public List<Move> GenerateMoves(Position origin, BoardModel board) {
+		public List<Move> GenerateMoves(Position origin, Board board) {
 			List<Move> moves = new List<Move>();
 			List<Position> finalPositions = GetAllPossibleDestinations(origin, board);
 			foreach (Position finalPosition in finalPositions) {
@@ -14,6 +14,6 @@ namespace ChessLogic {
 			return moves;
 		}
 
-		public abstract List<Position> GetAllPossibleDestinations(Position origin, BoardModel board);
+		public abstract List<Position> GetAllPossibleDestinations(Position origin, Board board);
 	}
 }

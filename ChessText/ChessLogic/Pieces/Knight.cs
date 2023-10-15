@@ -10,7 +10,7 @@ namespace ChessLogic {
 			Color = color;
 		}
 
-		public override List<Position> GetAllPossibleDestinations(Position origin, BoardModel board) {
+		public override List<Position> GetAllPossibleDestinations(Position origin, Board board) {
 			List<Position> positions = new List<Position>();
 
 			Position NEEdge = origin + Direction.NE * 2;
