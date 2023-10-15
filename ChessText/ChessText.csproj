@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChessLogic\BoardModel.cs" />
+    <Compile Include="ChessLogic\Board.cs" />
     <Compile Include="ChessLogic\Direction.cs" />
     <Compile Include="ChessLogic\Game.cs" />
     <Compile Include="ChessLogic\Move.cs" />
