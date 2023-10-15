@@ -14,7 +14,7 @@ namespace ChessText.ChessLogic.Pieces
 
 		public override Player Color { get; }
 
-		public Piece(Player color)
+		public Rook(Player color)
 		{
 			Color = color;
 		}

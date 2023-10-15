@@ -45,9 +45,15 @@
   <ItemGroup>
     <Compile Include="ChessLogic\BoardModel.cs" />
     <Compile Include="ChessLogic\Direction.cs" />
+    <Compile Include="ChessLogic\Pieces\Bishop.cs" />
+    <Compile Include="ChessLogic\Pieces\King.cs" />
+    <Compile Include="ChessLogic\Pieces\Knight.cs" />
+    <Compile Include="ChessLogic\Pieces\Pawn.cs" />
+    <Compile Include="ChessLogic\Pieces\Queen.cs" />
+    <Compile Include="ChessLogic\Pieces\Rook.cs" />
     <Compile Include="ChessLogic\Position.cs" />
-    <Compile Include="ChessLogic\PieceLogic\Piece.cs" />
-    <Compile Include="ChessLogic\PieceLogic\PieceType.cs" />
+    <Compile Include="ChessLogic\Pieces\Piece.cs" />
+    <Compile Include="ChessLogic\Pieces\PieceType.cs" />
     <Compile Include="ChessLogic\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
