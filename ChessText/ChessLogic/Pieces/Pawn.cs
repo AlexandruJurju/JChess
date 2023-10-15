@@ -1,25 +1,66 @@
 ﻿using System.Collections.Generic;
 
-namespace ChessLogic
-{
+namespace ChessLogic {
 	public class Pawn : Piece {
 		public override PieceType Type => PieceType.Pawn;
 
 		public override Player Color { get; }
 
-		public Pawn(Player color)
-		{
+		public bool FirstMove { get; set; }
+
+		public Direction MainDirection { get; set; }
+
+		private static readonly Direction[] moveDirections = new Direction[]{
+			Direction.E, Direction.W
+		};
+
+		public Pawn(Player color) {
 			Color = color;
-		}
 
+			if (Color == Player.White) {
+				MainDirection = Direction.N;
+			} else {
+				MainDirection = Direction.S;
+			}
 
-
-		public override List<Move> GenerateMoves(Position origin, BoardModel board) {
-			throw new System.NotImplementedException();
+			FirstMove = false;
 		}
 
 		public override List<Position> GetAllPossibleDestinations(Position origin, BoardModel board) {
-			throw new System.NotImplementedException();
+			List<Position> result = new List<Position>();
+
+			Position OneAway = origin + MainDirection;
+			if (CanMoveTo(OneAway, board)) {
+				result.Add(OneAway);
+			}
+
+			if (FirstMove) {
+				Position TwoAway = origin + MainDirection * 2;
+
+				if (CanMoveTo(TwoAway, board)) {
+					result.Add(TwoAway);
+				}
+
+				FirstMove = false;
+			} else {
+				foreach (Direction dir in moveDirections) {
+					Position dest = origin + MainDirection + dir;
+
+					if (CanCapture(dest, board)) {
+						result.Add(dest);
+					}
+				}
+			}
+
+			return result;
+		}
+
+		private bool CanMoveTo(Position pos, BoardModel board) {
+			return board.IsInsideBoard(pos) && board.IsEmptyPosition(pos);
+		}
+
+		private bool CanCapture(Position pos, BoardModel board) {
+			return board.IsInsideBoard(pos) && board[pos].Color != Color;
 		}
 	}
 }
