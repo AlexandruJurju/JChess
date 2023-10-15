@@ -8,7 +8,6 @@ namespace ChessText.Model
 {
 	public enum Player
 	{
-		None,
 		White,
 		Black
 	}

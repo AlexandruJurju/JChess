@@ -12,6 +12,8 @@ namespace ChessText.Board
 	{
 		private Piece[,] board = new Piece[8, 8];
 
+		// indexer, acess elements as if it was an array
+		// takes ints row and col as parameters for indexing the board array
 		public Piece this[int row, int col]
 		{
 			get { return board[row, col]; }

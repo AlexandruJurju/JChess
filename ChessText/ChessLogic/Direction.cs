@@ -9,6 +9,8 @@ namespace ChessText.ChessLogic
 	public class Direction
 	{
 
+		// cardinal directions
+		// matrix logic, when going up i index has to decrease, when going left j index decreses
 		public readonly static Direction N = new Direction(-1, 0);
 		public readonly static Direction S = new Direction(+1, 0);
 		public readonly static Direction W = new Direction(0, -1);
@@ -20,7 +22,7 @@ namespace ChessText.ChessLogic
 		public readonly static Direction SW = Direction.S + Direction.W;
 
 
-
+		// store the changes for index i and j necessary for the move in that direction
 		public int RowDelta { get; set; }
 		public int ColumnDelta { get; set; }
 
