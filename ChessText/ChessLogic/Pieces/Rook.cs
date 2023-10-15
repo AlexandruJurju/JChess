@@ -1,4 +1,4 @@
-﻿using ChessText.Model;
+﻿using System.Collections.Generic;
 
 namespace ChessLogic
 {
@@ -11,6 +11,11 @@ namespace ChessLogic
 		public Rook(Player color)
 		{
 			Color = color;
+		}
+
+		public override IEnumerable<Move> GenerateMoves(Position origin, Position destination)
+		{
+			throw new System.NotImplementedException();
 		}
 	}
 }

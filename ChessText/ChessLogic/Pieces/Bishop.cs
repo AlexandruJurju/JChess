@@ -1,14 +1,8 @@
-﻿using ChessText.Model;
-using ChessText.Model.PieceLogic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ChessLogic
 {
-	internal class Bishop : Piece
+	public class Bishop : Piece
 	{
 		public override PieceType Type => PieceType.Bishop;
 
@@ -17,6 +11,11 @@ namespace ChessLogic
 		public Bishop(Player color)
 		{
 			Color = color;
+		}
+
+		public override IEnumerable<Move> GenerateMoves(Position origin, Position destination)
+		{
+			throw new System.NotImplementedException();
 		}
 	}
 }

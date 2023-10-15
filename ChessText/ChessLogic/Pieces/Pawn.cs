@@ -1,5 +1,4 @@
-﻿using ChessText.Model;
-using ChessText.Model.PieceLogic;
+﻿using System.Collections.Generic;
 
 namespace ChessLogic
 {
@@ -12,6 +11,11 @@ namespace ChessLogic
 		public Pawn(Player color)
 		{
 			Color = color;
+		}
+
+		public override IEnumerable<Move> GenerateMoves(Position origin, Position destination)
+		{
+			throw new System.NotImplementedException();
 		}
 	}
 }
