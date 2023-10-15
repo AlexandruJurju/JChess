@@ -7,6 +7,6 @@ namespace ChessLogic
 		public abstract PieceType Type { get; }
 		public abstract Player Color { get; }
 
-		public abstract IEnumerable<Move> GenerateMoves(Position origin, Position destination);
+		public abstract List<Move> GenerateMoves(Position origin, BoardModel board);
 	}
 }

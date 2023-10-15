@@ -1,20 +1,16 @@
 ﻿using System.Collections.Generic;
 
-namespace ChessLogic
-{
-	public class Rook : Piece
-	{
+namespace ChessLogic {
+	public class Rook : Piece {
 		public override PieceType Type => PieceType.Pawn;
 
 		public override Player Color { get; }
 
-		public Rook(Player color)
-		{
+		public Rook(Player color) {
 			Color = color;
 		}
 
-		public override IEnumerable<Move> GenerateMoves(Position origin, Position destination)
-		{
+		public override List<Move> GenerateMoves(Position origin, BoardModel board) {
 			throw new System.NotImplementedException();
 		}
 	}

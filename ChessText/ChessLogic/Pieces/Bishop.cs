@@ -1,21 +1,24 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
-namespace ChessLogic
-{
-	public class Bishop : Piece
-	{
+namespace ChessLogic {
+	public class Bishop : Piece {
+
+		private static readonly Direction[] moveDirections = new Direction[]
+		{
+			Direction.NW, Direction.NE, Direction.SW, Direction.SE
+		};
+
 		public override PieceType Type => PieceType.Bishop;
 
 		public override Player Color { get; }
 
-		public Bishop(Player color)
-		{
+		public Bishop(Player color) {
 			Color = color;
 		}
 
-		public override IEnumerable<Move> GenerateMoves(Position origin, Position destination)
-		{
-			throw new System.NotImplementedException();
+		public override List<Move> GenerateMoves(Position origin, BoardModel board) {
+			throw new NotImplementedException("This method or functionality is not implemented yet.");
 		}
 	}
 }

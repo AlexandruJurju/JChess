@@ -2,8 +2,7 @@
 
 namespace ChessLogic
 {
-	public class Pawn : Piece
-	{
+	public class Pawn : Piece {
 		public override PieceType Type => PieceType.Pawn;
 
 		public override Player Color { get; }
@@ -13,8 +12,9 @@ namespace ChessLogic
 			Color = color;
 		}
 
-		public override IEnumerable<Move> GenerateMoves(Position origin, Position destination)
-		{
+
+
+		public override List<Move> GenerateMoves(Position origin, BoardModel board) {
 			throw new System.NotImplementedException();
 		}
 	}

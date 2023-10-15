@@ -13,7 +13,7 @@ namespace ChessLogic
 			Color = color;
 		}
 
-		public override IEnumerable<Move> GenerateMoves(Position origin, Position destination)
+		public override List<Move> GenerateMoves(Position origin, BoardModel board)
 		{
 			throw new System.NotImplementedException();
 		}

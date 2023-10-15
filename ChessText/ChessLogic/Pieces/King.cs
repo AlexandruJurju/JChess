@@ -1,21 +1,46 @@
 ﻿using System.Collections.Generic;
 
-namespace ChessLogic
-{
-	public class King : Piece
-	{
+namespace ChessLogic {
+	public class King : Piece {
 		public override PieceType Type => PieceType.Pawn;
 
 		public override Player Color { get; }
 
-		public King(Player color)
+		// array with all possible move directions
+		private static readonly Direction[] moveDirections = new Direction[]
 		{
+			Direction.N, Direction.S,Direction.E, Direction.W, Direction.NE, Direction.SE, Direction.NW,Direction.SW
+		};
+
+		public King(Player color) {
 			Color = color;
 		}
 
-		public override IEnumerable<Move> GenerateMoves(Position origin, Position destination)
-		{
-			throw new System.NotImplementedException();
+		public override List<Move> GenerateMoves(Position origin, BoardModel board) {
+			List<Move> moves = new List<Move>();
+			List<Position> finalPositions = GetAllPossibleDestinations(origin, board);
+			foreach (Position finalPosition in finalPositions) {
+				moves.Add(new Move(origin, finalPosition));
+			}
+			return moves;
+		}
+
+		public List<Position> GetAllPossibleDestinations(Position origin, BoardModel board) {
+			List<Position> result = new List<Position>();
+
+			foreach (Direction dir in moveDirections) {
+				Position newPos = origin + dir;
+
+				if (!board.IsInsideBoard(newPos)) {
+					continue;
+				}
+
+				if (board.IsEmptyPosition(newPos) || board[newPos].Color != this.Color) {
+					result.Add(newPos);
+				}
+			}
+
+			return result;
 		}
 	}
 }
