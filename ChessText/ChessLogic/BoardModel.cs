@@ -49,7 +49,7 @@ namespace ChessLogic {
 		}
 
 		public bool IsInsideBoard(Position pos) {
-			if (pos.Row >= 0 && pos.Row <= 8 && pos.Col >= 0 && pos.Col <= 8) {
+			if (pos.Row >= 0 && pos.Row < 8 && pos.Col >= 0 && pos.Col < 8) {
 				return true;
 			}
 			return false;

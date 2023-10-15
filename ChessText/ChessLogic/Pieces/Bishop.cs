@@ -18,7 +18,12 @@ namespace ChessLogic {
 		}
 
 		public override List<Move> GenerateMoves(Position origin, BoardModel board) {
-			throw new NotImplementedException("This method or functionality is not implemented yet.");
+			List<Move> moves = new List<Move>();
+			List<Position> finalPositions = GetAllPossibleDestinations(origin, board);
+			foreach (Position finalPosition in finalPositions) {
+				moves.Add(new Move(origin, finalPosition));
+			}
+			return moves;
 		}
 
 		public override List<Position> GetAllPossibleDestinations(Position origin, BoardModel board) {
