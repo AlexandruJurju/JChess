@@ -2,7 +2,7 @@
 
 namespace ChessLogic {
 	public class Queen : Piece {
-		public override PieceType Type => PieceType.Pawn;
+		public override PieceType Type => PieceType.Queen;
 
 		public override Player Color { get; }
 
