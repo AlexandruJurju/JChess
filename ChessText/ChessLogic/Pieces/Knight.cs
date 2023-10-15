@@ -17,5 +17,9 @@ namespace ChessLogic
 		{
 			throw new System.NotImplementedException();
 		}
+
+		public override List<Position> GetAllPossibleDestinations(Position origin, BoardModel board) {
+			throw new System.NotImplementedException();
+		}
 	}
 }

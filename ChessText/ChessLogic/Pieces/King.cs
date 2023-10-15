@@ -25,7 +25,7 @@ namespace ChessLogic {
 			return moves;
 		}
 
-		public List<Position> GetAllPossibleDestinations(Position origin, BoardModel board) {
+		public override List<Position> GetAllPossibleDestinations(Position origin, BoardModel board) {
 			List<Position> result = new List<Position>();
 
 			foreach (Direction dir in moveDirections) {
@@ -35,8 +35,11 @@ namespace ChessLogic {
 					continue;
 				}
 
-				if (board.IsEmptyPosition(newPos) || board[newPos].Color != this.Color) {
+				if (board.IsEmptyPosition(newPos)) {
 					result.Add(newPos);
+				} else if (board[newPos].Color != this.Color) {
+					result.Add(newPos);
+					continue;
 				}
 			}
 

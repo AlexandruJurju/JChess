@@ -29,9 +29,9 @@ namespace ChessLogic {
 			board[0, 6] = new Knight(Player.Black);
 			board[0, 7] = new Rook(Player.Black);
 
-			for (int i = 0; i < 8; i++) {
+/*			for (int i = 0; i < 8; i++) {
 				board[1, i] = new Pawn(Player.Black);
-			}
+			}*/
 
 			// Initialize White pieces
 			board[7, 0] = new Rook(Player.White);
@@ -43,9 +43,9 @@ namespace ChessLogic {
 			board[7, 6] = new Knight(Player.White);
 			board[7, 7] = new Rook(Player.White);
 
-			for (int i = 0; i < 8; i++) {
+/*			for (int i = 0; i < 8; i++) {
 				board[6, i] = new Pawn(Player.White);
-			}
+			}*/
 		}
 
 		public bool IsInsideBoard(Position pos) {
