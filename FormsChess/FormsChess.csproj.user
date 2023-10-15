@@ -4,5 +4,8 @@
     <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="View\Cell.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

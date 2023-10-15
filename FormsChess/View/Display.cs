@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace View {
 	public class Display {
 		public ComboBox DepthComboBox { get; set; }
 		public Label DepthLabel { get; set; }
 		public Label PlayerIndicator { get; set; }
+
+		public Cell[,] ViewCells = new Cell[8, 8];
 
 		public Display() {
 			DepthComboBox = new ComboBox();
@@ -47,6 +50,25 @@ namespace View {
 			} else {
 				PlayerIndicator.ForeColor = Color.Black;
 				PlayerIndicator.Text = "P2";
+			}
+		}
+
+		public void InitCells() {
+			for (int i = 0; i < 8; i++) {
+				for (int j = 0; j < 8; j++) {
+					Cell cell = new Cell(i, j);
+					cell.Size = new Size(60, 60);
+					cell.Location = new Point(i * 60 + 75, j * 60 + 75);
+					cell.Click += new EventHandler(form.clickOnCell);
+					if (i % 2 == j % 2) {
+						cell.BackColor = Color.FromArgb(255, 102, 68, 58);
+					} else {
+						cell.BackColor = Color.FromArgb(255, 245, 230, 191);
+					}
+					cell.Color = cell.BackColor;
+
+					ViewCells[j, i] = cell;
+				}
 			}
 		}
 
