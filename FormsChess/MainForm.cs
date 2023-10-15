@@ -11,8 +11,10 @@ namespace FormsChess {
 			this.CenterToScreen();
 
 			Display display = new Display();
+			this.Controls.Add(display.PlayerIndicator);
+			this.Controls.Add(display.DepthComboBox);
 			this.Controls.Add(display.DepthLabel);
-			this.Controls.Add(display.DepthLabel);
+
 
 		}
 	}
