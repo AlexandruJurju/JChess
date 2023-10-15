@@ -1,0 +1,8 @@
+X:\Downloads\New folder\ChessText\bin\Debug\ChessText.exe.config
+X:\Downloads\New folder\ChessText\bin\Debug\ChessText.exe
+X:\Downloads\New folder\ChessText\bin\Debug\ChessText.pdb
+X:\Downloads\New folder\ChessText\obj\Debug\ChessText.csproj.AssemblyReference.cache
+X:\Downloads\New folder\ChessText\obj\Debug\ChessText.csproj.SuggestedBindingRedirects.cache
+X:\Downloads\New folder\ChessText\obj\Debug\ChessText.csproj.CoreCompileInputs.cache
+X:\Downloads\New folder\ChessText\obj\Debug\ChessText.exe
+X:\Downloads\New folder\ChessText\obj\Debug\ChessText.pdb
