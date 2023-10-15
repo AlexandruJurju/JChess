@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ChessText.ChessLogic;
 
 namespace ChessText.Model
 {
@@ -15,6 +11,11 @@ namespace ChessText.Model
 		{
 			Row = row;
 			Column = column;
+		}
+
+		public static Position operator +(Position a, Direction dir)
+		{
+			return new Position(a.Row + dir.RowDelta, a.Column + dir.ColumnDelta);
 		}
 	}
 }

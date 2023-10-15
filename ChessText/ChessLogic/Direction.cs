@@ -8,6 +8,19 @@ namespace ChessText.ChessLogic
 {
 	public class Direction
 	{
+
+		public readonly static Direction N = new Direction(-1, 0);
+		public readonly static Direction S = new Direction(+1, 0);
+		public readonly static Direction W = new Direction(0, -1);
+		public readonly static Direction E = new Direction(0, +1);
+
+		public readonly static Direction NE = Direction.N + Direction.E;
+		public readonly static Direction NW = Direction.N + Direction.W;
+		public readonly static Direction SE = Direction.S + Direction.E;
+		public readonly static Direction SW = Direction.S + Direction.W;
+
+
+
 		public int RowDelta { get; set; }
 		public int ColumnDelta { get; set; }
 
@@ -16,5 +29,21 @@ namespace ChessText.ChessLogic
 			RowDelta = rowDelta;
 			ColumnDelta = columnDelta;
 		}
+
+		public static Direction operator +(Direction a, Direction b)
+		{
+			return new Direction(a.RowDelta + b.RowDelta, a.ColumnDelta + b.ColumnDelta);
+		}
+
+		public static Direction operator -(Direction a, Direction b)
+		{
+			return new Direction(a.RowDelta - b.RowDelta, a.ColumnDelta - b.ColumnDelta);
+		}
+
+		public static Direction operator *(Direction direction, int scalar)
+		{
+			return new Direction(direction.RowDelta * scalar, direction.ColumnDelta * scalar);
+		}
+
 	}
 }
