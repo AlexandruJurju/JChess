@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChessText.ChessLogic.PieceLogic
+namespace ChessLogic
 {
 	internal class Bishop : Piece
 	{

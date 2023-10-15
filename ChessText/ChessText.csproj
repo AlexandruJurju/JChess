@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="ChessLogic\BoardModel.cs" />
     <Compile Include="ChessLogic\Direction.cs" />
+    <Compile Include="ChessLogic\Game.cs" />
+    <Compile Include="ChessLogic\Move.cs" />
     <Compile Include="ChessLogic\Pieces\Bishop.cs" />
     <Compile Include="ChessLogic\Pieces\King.cs" />
     <Compile Include="ChessLogic\Pieces\Knight.cs" />

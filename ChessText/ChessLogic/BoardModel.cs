@@ -1,10 +1,6 @@
-﻿using ChessText.ChessLogic.PieceLogic;
-using ChessText.ChessLogic.Pieces;
-using ChessText.Model;
-using ChessText.Model.PieceLogic;
-using System;
+﻿using System;
 
-namespace ChessText.Board
+namespace ChessLogic
 {
 
 	public class BoardModel

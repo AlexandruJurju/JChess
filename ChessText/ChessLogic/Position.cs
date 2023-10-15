@@ -1,6 +1,6 @@
 ﻿using ChessText.ChessLogic;
 
-namespace ChessText.Model
+namespace ChessLogic
 {
 	public class Position
 	{

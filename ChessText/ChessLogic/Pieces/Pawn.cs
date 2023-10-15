@@ -1,7 +1,7 @@
 ﻿using ChessText.Model;
 using ChessText.Model.PieceLogic;
 
-namespace ChessText.ChessLogic.PieceLogic
+namespace ChessLogic
 {
 	public class Pawn : Piece
 	{
