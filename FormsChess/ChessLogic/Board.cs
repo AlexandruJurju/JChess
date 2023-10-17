@@ -29,9 +29,9 @@ namespace ChessLogic {
 			board[0, 6] = new Knight(Player.Black);
 			board[0, 7] = new Rook(Player.Black);
 
-/*			for (int i = 0; i < 8; i++) {
-				board[1, i] = new Pawn(Player.Black);
-			}*/
+			/*			for (int i = 0; i < 8; i++) {
+							board[1, i] = new Pawn(Player.Black);
+						}*/
 
 			// Initialize White pieces
 			board[7, 0] = new Rook(Player.White);
@@ -43,9 +43,9 @@ namespace ChessLogic {
 			board[7, 6] = new Knight(Player.White);
 			board[7, 7] = new Rook(Player.White);
 
-/*			for (int i = 0; i < 8; i++) {
-				board[6, i] = new Pawn(Player.White);
-			}*/
+			/*			for (int i = 0; i < 8; i++) {
+							board[6, i] = new Pawn(Player.White);
+						}*/
 		}
 
 		public bool IsInsideBoard(Position pos) {
@@ -71,6 +71,31 @@ namespace ChessLogic {
 		public bool IsEmptyPosition(Position pos) {
 			return this[pos] is null;
 		}
+
+		public List<Position> GetAllFilledPositions() {
+			List<Position> list = new List<Position>();
+			for (int row = 0; row < 8; row++) {
+				for (int col = 0; col < 8; col++) {
+					Position currentPos = new Position(row, col);
+					if (!IsEmptyPosition(currentPos)) {
+						list.Add(currentPos);
+					}
+				}
+			}
+
+			return list;
+		}
+
+		public List<Position> GetAllPicePositionsForPlayer(Player player) {
+			List<Position> list = new List<Position>();
+			foreach (Position pos in GetAllFilledPositions()) {
+				if (this[pos].Color == player) {
+					list.Add(pos);
+				}
+			}
+			return list;
+		}
+
 
 	}
 }
