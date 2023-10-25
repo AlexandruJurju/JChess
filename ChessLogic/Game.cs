@@ -1,35 +1,33 @@
-﻿using System.Collections.Generic;
+﻿namespace ChessLogic {
+    public class Game {
+        public Board Board { get; set; }
+        public Player CurrentPlayer { get; set; }
 
-namespace ChessLogic {
-	public class Game {
+        public Stack<Move> History { get; set; }
 
-		public Board Board { get; set; }
-		public Player CurrentPlayer { get; set; }
+        public Game(Board board) {
+            CurrentPlayer = Player.White;
+            Board = board;
+            History = new Stack<Move>();
+        }
 
-		public Stack<Move> History { get; set; }
+        public List<Move> GetValidMoves(Position pos) {
+            if (Board.IsEmptyPosition(pos) || Board[pos].Color != CurrentPlayer) {
+                return new List<Move>();
+            }
 
-		public Game(Board board) {
-			CurrentPlayer = Player.White;
-			Board = board;
-			History = new Stack<Move>();
-		}
+            return Board[pos].GenerateMoves(pos, Board);
+        }
 
-		public List<Move> GetValidMoves(Position pos) {
-			if (Board.IsEmptyPosition(pos) || Board[pos].Color != CurrentPlayer) {
-				return new List<Move>();
-			}
-
-			return Board[pos].GenerateMoves(pos, Board);
-		}
-
-		public void MovePiece(Move move) {
-			move.Execute(Board);
-			History.Push(move);
-			if (CurrentPlayer == Player.White) {
-				CurrentPlayer = Player.Black;
-			} else {
-				CurrentPlayer = Player.White;
-			}
-		}
-	}
+        public void MovePiece(Move move) {
+            move.Execute(Board);
+            History.Push(move);
+            if (CurrentPlayer == Player.White) {
+                CurrentPlayer = Player.Black;
+            }
+            else {
+                CurrentPlayer = Player.White;
+            }
+        }
+    }
 }

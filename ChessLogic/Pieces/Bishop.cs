@@ -1,37 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace ChessLogic.Pieces {
+    public class Bishop : Piece {
+        private static readonly Direction[] MoveDirections = new Direction[] {
+            Direction.NW, Direction.NE, Direction.SW, Direction.SE
+        };
 
-namespace ChessLogic {
-	public class Bishop : Piece {
+        public override PieceType Type => PieceType.Bishop;
 
-		private static readonly Direction[] moveDirections = new Direction[]
-		{
-			Direction.NW, Direction.NE, Direction.SW, Direction.SE
-		};
+        public override Player Color { get; }
 
-		public override PieceType Type => PieceType.Bishop;
+        public Bishop(Player color) {
+            Color = color;
+        }
 
-		public override Player Color { get; }
+        public override List<Position> GetAllPossibleDestinations(Position origin, Board board) {
+            List<Position> result = new List<Position>();
 
-		public Bishop(Player color) {
-			Color = color;
-		}
+            foreach (Direction dir in MoveDirections) {
+                for (Position pos = origin + dir; board.IsInsideBoard(pos); pos += dir) {
+                    if (board.IsEmptyPosition(pos)) {
+                        result.Add(pos);
+                    }
+                    else if (board[pos].Color != this.Color) {
+                        result.Add(pos);
+                        continue;
+                    }
+                }
+            }
 
-		public override List<Position> GetAllPossibleDestinations(Position origin, Board board) {
-			List<Position> result = new List<Position>();
-
-			foreach (Direction dir in moveDirections) {
-				for (Position pos = origin + dir; board.IsInsideBoard(pos); pos += dir) {
-					if (board.IsEmptyPosition(pos)) {
-						result.Add(pos);
-					} else if (board[pos].Color != this.Color) {
-						result.Add(pos);
-						continue;
-					}
-				}
-			}
-
-			return result;
-		}
-	}
+            return result;
+        }
+    }
 }

@@ -1,11 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net7.0": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net7.0": []
   },
   "packageFolders": {
     "C:\\Users\\realb\\.nuget\\packages\\": {}
@@ -13,26 +13,26 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "X:\\Private Repos\\JChess\\ChessLogic\\ChessLogic.csproj",
+      "projectUniqueName": "X:\\Private Repos\\JChess\\Project\\ChessLogic\\ChessLogic.csproj",
       "projectName": "ChessLogic",
-      "projectPath": "X:\\Private Repos\\JChess\\ChessLogic\\ChessLogic.csproj",
+      "projectPath": "X:\\Private Repos\\JChess\\Project\\ChessLogic\\ChessLogic.csproj",
       "packagesPath": "C:\\Users\\realb\\.nuget\\packages\\",
-      "outputPath": "X:\\Private Repos\\JChess\\ChessLogic\\obj\\",
+      "outputPath": "X:\\Private Repos\\JChess\\Project\\ChessLogic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\realb\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "projectReferences": {}
         }
       },
@@ -43,8 +43,8 @@
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
+      "net7.0": {
+        "targetAlias": "net7.0",
         "imports": [
           "net461",
           "net462",
